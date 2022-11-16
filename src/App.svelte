@@ -22,6 +22,12 @@
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
   </div>
+
+  <footer>
+    <p><a href="https://github.com/michaellanuk/solving-linear-congruences" target="_blank" rel="noreferrer">
+      Github
+    </a></p>
+  </footer>
 </main>
 
 <style>
