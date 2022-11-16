@@ -41,7 +41,7 @@ class Calculator {
       b %= n;
     }
 
-    if (this.solutionsDoNotExist({ a, b, n })) {
+    if (this.solutionsDoNotExist({ a, b, n }) || [a, b, n].some((v) => v < 0)) {
       return null;
     }
 
