@@ -36,7 +36,7 @@ class Calculator {
    * @returns {Number | null}
    */
   solve = ({ a, b, n }) => {
-    if (b > n) {
+    if (b >= n) {
       // get least residue to prevent infinite loop
       b %= n;
     }
