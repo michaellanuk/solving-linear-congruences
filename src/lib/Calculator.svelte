@@ -20,7 +20,7 @@
     <div class=column>
       {#each Object.keys(variables) as variable}
           <label for=variable>Value for <i>{variable}</i>:</label>
-          <input type=number id=variable bind:value={variables[variable]} required>
+          <input type=number id=variable bind:value={variables[variable]} required min=0>
       {/each}
     </div>
     <div class=column>

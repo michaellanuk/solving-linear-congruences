@@ -25,7 +25,10 @@ class Calculator {
    * @param { { a: number, b: number, n: number } } params
    * @returns {Boolean}
    */
-  solutionsDoNotExist = ({ a, b, n }) => (!this.areCoprime(a, n) && b % this.hcf(a, n) !== 0) || n == 1;
+  solutionsDoNotExist = ({ a, b, n }) =>
+    (!this.areCoprime(a, n) && b % this.hcf(a, n) !== 0)
+    || (b === 0 && n === 0)
+    || n == 1;
 
   /**
    * Solves the linear congruence
