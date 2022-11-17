@@ -3,6 +3,9 @@
 
   const calculator = new Calculator();
 
+  const MATH_BELONGS_TO = '\u2208';
+  const MATH_EMPTY_SET = '\u2205';
+
   const variables = {
     a: 3,
     b: 2,
@@ -12,7 +15,7 @@
   let solutions;
   const solve = () => {
     const solutionSet = calculator.solve({ a: variables.a, b: variables.b, n: variables.n });
-    solutions = solutionSet ? `{ ${solutionSet?.join(', ')} }` : '\u2205';
+    solutions = solutionSet ? `{ ${solutionSet?.join(', ')} }` : MATH_EMPTY_SET;
   }
 </script>
 
@@ -25,10 +28,10 @@
       {/each}
     </div>
     <div class=column>
-      <button on:click={solve}>
+      <button on:click={solve} id=solve>
         Solve <i>{variables.a}&#119909; ≡ {variables.b} (mod {variables.n})</i>
       </button>
-      <p>&#119909; &#8712; {solutions || '?'}</p>
+      <p>&#119909; {MATH_BELONGS_TO} {solutions || '?'}</p>
     </div>
   </div>
 </div>
