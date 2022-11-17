@@ -3,22 +3,20 @@ class Calculator {
 
   /**
    * Returns the highest common factor of two integers
-   * @param {number} x
-   * @param {number} y
+   * @param { { x: number, y: number } } params
    * @returns {number}
    */
-  hcf = (x, y) => {
+  hcf = ({ x, y }) => {
     if (y === 0) return x;
-    return this.hcf(y, x % y);
+    return this.hcf({x: y, y: x % y });
   }
 
   /**
    * Returns whether two integers are coprime
-   * @param {number} a
-   * @param {number} n
+   * @param { { a: number, n: number } } params
    * @returns {Boolean}
    */
-  areCoprime = (a, n) => this.hcf(a, n) === 1;
+  areCoprime = ({ a, n }) => this.hcf({ x: a, y: n }) === 1;
 
   /**
    * Returns whether a solution set exists for a given linear congruence
@@ -26,7 +24,7 @@ class Calculator {
    * @returns {Boolean}
    */
   solutionsDoNotExist = ({ a, b, n }) =>
-    (!this.areCoprime(a, n) && b % this.hcf(a, n) !== 0)
+    (!this.areCoprime({ a, n }) && b % this.hcf({ x: a, y: n }) !== 0)
     || (b === 0 && n === 0)
     || n == 1;
 
