@@ -5,9 +5,12 @@
 
 <main>
   <h1>Linear congruence solver</h1>
-  <h3>
-    A solver for linear congruences of the form <i>a&#119909; ≡ b (mod n)</i>
-  </h3>
+  <p>
+    A tool to solve linear congruences of the form <i>a&#119909; ≡ b (mod n)</i>
+  </p>
+  <p>
+    Input your values for <i>a, b,</i> and <i>n</i> and click "Solve"
+  </p>
 
   <div class="card">
     <Calculator />
