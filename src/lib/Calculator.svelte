@@ -9,9 +9,10 @@
     n: 5,
   };
 
-  let x;
+  let solutions;
   const solve = () => {
-    x = calculator.solve({ a: variables.a, b: variables.b, n: variables.n }) || 'No solutions';
+    const solutionSet = calculator.solve({ a: variables.a, b: variables.b, n: variables.n });
+    solutions = solutionSet ? `{ ${solutionSet?.join(', ')} }` : '\u2205';
   }
 </script>
 
@@ -27,7 +28,7 @@
       <button on:click={solve}>
         Solve <i>{variables.a}&#119909; ≡ {variables.b} (mod {variables.n})</i>
       </button>
-      <p>&#119909; = {x || '?'}</p>
+      <p>&#119909; &#8712; {solutions || '?'}</p>
     </div>
   </div>
 </div>

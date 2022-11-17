@@ -33,7 +33,7 @@ class Calculator {
   /**
    * Solves the linear congruence
    * @param { { a: number, b: number, n: number } } params
-   * @returns {Number | null}
+   * @returns {Number[] | null}
    */
   solve = ({ a, b, n }) => {
     if (b >= n) {
@@ -45,16 +45,21 @@ class Calculator {
       return null;
     }
 
-    if (a === 1) {
-      return b;
+    if (b === 0) {
+      return [b];
     }
 
     let x = 1;
-    while ((a * x) % n !== b) {
+    const solutions = [];
+    while (x < n) {
+      if ((a * x) % n === b) {
+        solutions.push(x);
+      }
+
       x++;
     }
 
-    return x;
+    return solutions;
   }
 }
 
