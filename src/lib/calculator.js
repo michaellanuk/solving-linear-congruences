@@ -31,7 +31,7 @@ class Calculator {
   /**
    * Solves the linear congruence
    * @param { { a: number, b: number, n: number } } params
-   * @returns {Number[] | null}
+   * @returns {number[] | null}
    */
   solve = ({ a, b, n }) => {
     if (b >= n) {
