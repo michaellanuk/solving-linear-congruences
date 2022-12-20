@@ -8,4 +8,3 @@ Try it out at: https://solving-linear-congruences.vercel.app/
 
 Future extensions:
 * Include step-by-step solution using Euclid's algorithm to find the multiplicative inverse
-* Handle negative inputs
