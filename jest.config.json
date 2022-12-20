@@ -1,0 +1,6 @@
+{
+  "preset": "ts-jest",
+  "transformIgnorePatterns": [
+      "node_modules/(?!(string-width|strip-ansi|ansi-regex|test-json-import)/)"
+  ]
+}

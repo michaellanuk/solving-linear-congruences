@@ -1,5 +1,5 @@
 <script>
-  import Calculator from './calculator.js';
+  import Calculator from './calculator';
   import Modal from './Modal.svelte';
 
   const calculator = new Calculator();
