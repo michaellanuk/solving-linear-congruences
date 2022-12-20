@@ -73,6 +73,7 @@ describe('solutionsDoNotExist', () => {
 describe('solve', () => {
   test('should solve for x', () => {
     expect(calculator.solve({ a: 3, b: 2, n: 5 })).toEqual([4]);
+    expect(calculator.solve({ a: 3, b: -8, n: 5 })).toEqual([4]);
     expect(calculator.solve({ a: 5, b: 10, n: 20 })).toEqual([2, 6, 10, 14, 18]);
   });
 });

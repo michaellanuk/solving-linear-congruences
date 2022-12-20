@@ -34,12 +34,17 @@ class Calculator {
    * @returns {number[] | null}
    */
   solve = ({ a, b, n }) => {
+    if (b < 0) {
+      // JavaScript's % operator provides negative values for negative numbers for b
+      b = ((b % n) + n) % n;
+    }
+
     if (b >= n) {
       // get least residue to prevent infinite loop
       b %= n;
     }
 
-    if (this.solutionsDoNotExist({ a, b, n }) || [a, b, n].some((v) => v < 0)) {
+    if (this.solutionsDoNotExist({ a, b, n }) || [a, n].some((v) => v < 0)) {
       return null;
     }
 
